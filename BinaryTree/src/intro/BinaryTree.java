@@ -7,4 +7,5 @@ public class BinaryTree {
     BinaryTree(int data){
         this.data = data;
     }
+    public BinaryTree(){}
 }
