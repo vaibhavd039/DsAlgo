@@ -4,7 +4,7 @@ public class BinaryTree {
     public int data;
     public BinaryTree left;
     public BinaryTree right;
-    BinaryTree(int data){
+    public BinaryTree(int data){
         this.data = data;
     }
     public BinaryTree(){}
