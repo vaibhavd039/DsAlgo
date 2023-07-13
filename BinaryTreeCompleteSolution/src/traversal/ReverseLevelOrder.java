@@ -1,4 +1,4 @@
-package important;
+package traversal;
 
 import base.BinaryTree;
 import base.BinaryTreeBuilder;
