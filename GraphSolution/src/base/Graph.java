@@ -1,24 +1,20 @@
 package base;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
 public class Graph {
     public int vertex;
-    public Map<Integer, List<Integer>> graphNodes;
+    public int[][] edges;
 
-    public Graph(int nodes) {
-        this.vertex = nodes;
-        graphNodes = new HashMap<>();
-        for (int i = 0; i < nodes; i++) {
-            graphNodes.put(i, new ArrayList<>());
-        }
+    public Graph() {
     }
 
-    public void addEdge(int source, int destination) {
-        graphNodes.get(source).add(destination);
+    public Graph(int vertex) {
+        super();
+        this.vertex = vertex;
+        edges = new int[vertex][vertex];
     }
+
+    public void addEdges(int source, int destination, int weight) {
+        edges[source][destination] = weight;
+    }
+
 }

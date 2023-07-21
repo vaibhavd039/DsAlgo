@@ -1,7 +1,7 @@
 package bsf_dfs;
 
-import base.Graph;
-import base.GraphBuilder;
+import base.UnWeightedGraph;
+import builders.SimpleUnWeightedUnDirectionalGraphBuilder;
 
 import java.util.HashSet;
 import java.util.List;
@@ -12,11 +12,11 @@ public class IterativeDFS {
     static Set<Integer> visited = new HashSet<>();
 
     public static void main(String[] args) {
-        Graph graph = GraphBuilder.buildSampleGraphUndirected();
-        dfs(graph, 2);
+        UnWeightedGraph unWeightedGraph = SimpleUnWeightedUnDirectionalGraphBuilder.buildSampleGraphUndirected();
+        dfs(unWeightedGraph, 2);
     }
 
-    public static void dfs(Graph graph, int source) {
+    public static void dfs(UnWeightedGraph unWeightedGraph, int source) {
         Stack<Integer> stack = new Stack<>();
         stack.push(source);
         while (!stack.isEmpty()) {
@@ -25,7 +25,7 @@ public class IterativeDFS {
                 System.out.println(temp);
                 visited.add(temp);
             }
-            List<Integer> next = graph.graphNodes.get(temp);
+            List<Integer> next = unWeightedGraph.graphNodes.get(temp);
             for (Integer element : next) {
                 if (!visited.contains(element)) {
                     System.out.println(element);

@@ -1,19 +1,21 @@
-package base;
+package builders;
+
+import base.UnWeightedGraph;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GraphBuilder {
-    public static Graph buildGraph(int vertex, List<List<Integer>> edges) {
-        Graph graph = new Graph(vertex);
+public class SimpleUnWeightedUnDirectionalGraphBuilder {
+    public static UnWeightedGraph buildGraph(int vertex, List<List<Integer>> edges) {
+        UnWeightedGraph unWeightedGraph = new UnWeightedGraph(vertex);
         for (List<Integer> entry : edges) {
-            graph.addEdge(entry.get(0), entry.get(1));
-            graph.addEdge(entry.get(1), entry.get(0));
+            unWeightedGraph.addEdge(entry.get(0), entry.get(1));
+            unWeightedGraph.addEdge(entry.get(1), entry.get(0));
         }
-        return graph;
+        return unWeightedGraph;
     }
 
-    public static Graph buildSampleGraphUndirected() {
+    public static UnWeightedGraph buildSampleGraphUndirected() {
         int vertex = 5;
         List<List<Integer>> edges = new ArrayList<>();
         List<Integer> edge1 = List.of(0, 1);
