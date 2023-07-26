@@ -16,7 +16,9 @@ public class SpiralLevelOrder {
         Stack<BinaryTree> stack1 = new Stack<>();
         Stack<BinaryTree> stack2 = new Stack<>();
         stack1.add(node);
+
         while(!stack1.isEmpty() || !stack2.isEmpty()){
+
             while(!stack1.isEmpty()){
                 BinaryTree temp = stack1.pop();
                 if(temp==null)
@@ -25,6 +27,7 @@ public class SpiralLevelOrder {
                 stack2.push(temp.right);
                 stack2.push(temp.left);
             }
+
             System.out.print("\n");
             while(!stack2.isEmpty()){
                 BinaryTree temp = stack2.pop();
@@ -34,6 +37,7 @@ public class SpiralLevelOrder {
                 stack1.push(temp.left);
                 stack1.push(temp.right);
             }
+
             System.out.print("\n");
         }
     }

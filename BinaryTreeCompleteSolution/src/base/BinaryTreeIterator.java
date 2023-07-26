@@ -34,12 +34,18 @@ public class BinaryTreeIterator {
         Queue<BinaryTree> queue = new LinkedList<>();
         queue.add(node);
         while (!queue.isEmpty()) {
-            BinaryTree temp = queue.poll();
-            if (temp == null)
-                continue;
-            System.out.print(temp.data + "\t");
-            queue.add(temp.left);
-            queue.add(temp.right);
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+
+                BinaryTree temp = queue.poll();
+                if (temp == null)
+                    continue;
+                System.out.print(temp.data + "\t");
+                queue.add(temp.left);
+                queue.add(temp.right);
+
+            }
+            System.out.println("\n");
         }
     }
 }
